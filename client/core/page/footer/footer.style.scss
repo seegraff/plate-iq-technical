@@ -1,0 +1,11 @@
+page-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    font-size: 0.9em;
+
+    & > i.copyright {
+        margin: 0 5px;
+    }
+}
