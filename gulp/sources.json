@@ -1,6 +1,6 @@
 {
     "app": {
-        "path": "../client",
+        "path": "./client",
         "files": {
             "html": "/**/*.html",
             "fonts": [
@@ -19,11 +19,11 @@
     },
     "vendor": {
         "files": [
-            "../node_modules"
+            "./node_modules"
         ]
     },
     "static": {
-        "path": "../static",
+        "path": "./static",
         "bin": {
             "path": "/bin",
             "js": {
