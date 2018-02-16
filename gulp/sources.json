@@ -1,0 +1,88 @@
+{
+    "app": {
+        "path": "../client",
+        "files": {
+            "html": "/**/*.html",
+            "fonts": [
+                "/**/fonts/*.ttf",
+                "/**/fonts/*.woff",
+                "/**/fonts/*.woff2"
+            ],
+            "js": [
+                "/**/*.js",
+                "/*.js"
+            ],
+            "css": [
+                "/**/*.scss"
+            ]
+        }
+    },
+    "vendor": {
+        "files": [
+            "../node_modules"
+        ]
+    },
+    "static": {
+        "path": "../static",
+        "bin": {
+            "path": "/bin",
+            "js": {
+                "path": "/js",
+                "files": {
+                    "vendor": "/vendor.js",
+                    "app": "/app.js",
+                    "templates": "/templates.js"
+                }
+            },
+            "css": {
+                "path": "/css",
+                "files": {
+                    "app": "/app.scss"
+                }
+            },
+            "fonts": {
+                "path": "/fonts"
+            }
+        },
+        "dev": {
+            "path": "/dev",
+            "js": {
+                "path": "/js",
+                "files": {
+                    "vendor": "/vendor.js",
+                    "app": "/app.js"
+                }
+            },
+            "css": {
+                "path": "/css",
+                "files": {
+                    "vendor": "/vendor.css",
+                    "app": "/app.css"
+                }
+            },
+            "fonts": {
+                "path": "/fonts"
+            }
+        },
+        "prod": {
+            "path": "/prod",
+            "js": {
+                "path": "/js",
+                "files": {
+                    "vendor": "/vendor.min.js",
+                    "app": "/app.min.js"
+                }
+            },
+            "css": {
+                "path": "/css",
+                "files": {
+                    "vendor": "/vendor.min.css",
+                    "app": "/app.min.css"
+                }
+            },
+            "fonts": {
+                "path": "/fonts"
+            }
+        }
+    }
+}

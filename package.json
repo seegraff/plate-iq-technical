@@ -1,23 +1,42 @@
 {
-  "name": "plate-iq-technical",
-  "version": "1.0.0",
-  "description": "- Python 3\r - Django 2\r - Angular 2\r - PostgreSQL @ localhost:5432",
-  "main": "index.js",
-  "dependencies": {
-    "angular": "^1.6.9"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/seegraff/plate-iq-technical.git"
-  },
-  "author": "Chance Graff",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/seegraff/plate-iq-technical/issues"
-  },
-  "homepage": "https://github.com/seegraff/plate-iq-technical#readme"
+    "name": "plate-iq-technical",
+    "version": "1.0.0",
+    "description": "- Python 3\r - Django 2\r - Angular 2\r - PostgreSQL @ localhost:5432",
+    "main": "index.js",
+    "dependencies": {
+        "angular": "^1.6.9"
+    },
+    "devDependencies": {
+        "fs": "0.0.1-security",
+        "glob": "^7.1.1",
+        "gulp": "^3.9.1",
+        "gulp-angular-templatecache": "^2.0.0",
+        "gulp-clean": "^0.3.2",
+        "gulp-clean-css": "^2.0.13",
+        "gulp-concat": "^2.6.1",
+        "gulp-filesize": "0.0.6",
+        "gulp-install": "^0.6.0",
+        "gulp-order": "^1.1.1",
+        "gulp-rename": "^1.2.2",
+        "gulp-sass": "^2.3.2",
+        "gulp-util": "^3.0.7",
+        "path": "^0.12.7",
+        "q": "^1.4.1",
+        "run-sequence": "^1.2.2",
+        "webpack": "^1.13.3",
+        "webpack-stream": "^3.2.0"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/seegraff/plate-iq-technical.git"
+    },
+    "author": "Chance Graff",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/seegraff/plate-iq-technical/issues"
+    },
+    "homepage": "https://github.com/seegraff/plate-iq-technical#readme"
 }
