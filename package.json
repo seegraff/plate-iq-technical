@@ -3,16 +3,7 @@
     "version": "1.0.0",
     "description": "- Python 3\r - Django 2\r - Angular 2\r - PostgreSQL @ localhost:5432",
     "main": "index.js",
-    "dependencies": {
-        "angular": "^1.6.9",
-        "angular-ui-router": "^1.0.3",
-        "bootstrap": "^4.0.0",
-        "gulp": "^3.9.1",
-        "gulp-count": "^1.0.0",
-        "gulp-print": "^5.0.0",
-        "jquery": "^3.3.1",
-        "popper.js": "^1.12.9"
-    },
+    "dependencies": {},
     "devDependencies": {
         "fs": "0.0.1-security",
         "glob": "^7.1.2",
@@ -30,7 +21,14 @@
         "q": "^1.5.1",
         "run-sequence": "^2.2.1",
         "webpack": "^1.13.3",
-        "webpack-stream": "^3.2.0"
+        "webpack-stream": "^3.2.0",
+        "angular": "^1.6.9",
+        "angular-ui-router": "^1.0.3",
+        "bootstrap": "^4.0.0",
+        "gulp": "^3.9.1",
+        "gulp-count": "^1.0.0",
+        "jquery": "^3.3.1",
+        "popper.js": "^1.12.9"
     },
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"

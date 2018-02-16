@@ -13,7 +13,5 @@ module.exports = gulp.task('js-compile', function() {
     var file = static.path + bin.path + bin.js.path + "/app.js";
     var dest = static.path + dev.path + dev.js.path;
 
-    console.log('Compile angular', file, dest);
-
     require('../jobs/js-compile')(file, dest);
 });

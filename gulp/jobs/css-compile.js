@@ -6,7 +6,9 @@ module.exports = function(files, dest) {
     var defer = q.defer();
 
     gulp.src(files)
-        .pipe(sass())
+        .pipe(sass({
+            sourceMapEmbed: false
+        }))
         .pipe(gulp.dest(dest))
         .on('end', defer.resolve);
 

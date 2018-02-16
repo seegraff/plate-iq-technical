@@ -19,7 +19,8 @@
     },
     "vendor": {
         "files": [
-            "./node_modules"
+            "./node_modules",
+            "!./node_modules/node-sass"
         ]
     },
     "static": {

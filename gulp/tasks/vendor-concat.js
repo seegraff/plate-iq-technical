@@ -16,10 +16,11 @@ module.exports = gulp.task('vendor-concat', function() {
     var name = css.files.vendor;
     var dest = static.path + dev.path + css.path;
 
-    return require('../jobs/concat-files')(files, name, dest);
+    var order = [
+        "angular",
+        "jquery",
+        "bootstrap",
+    ];
 
-    // var order = [
-    // ];
-    //
-    // return require('../jobs/concat-files')(files, name, dest, order);
+    return require('../jobs/concat-files')(files, name, dest, order);
 });

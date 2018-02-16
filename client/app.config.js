@@ -1,12 +1,15 @@
 angular.module( 'app' )
     .config( [ '$locationProvider', '$stateProvider', '$urlRouterProvider',
         function config( $locationProvider, $stateProvider, $urlRouterProvider ) {
-            $locationProvider.hashPrefix( '!' );
+            $locationProvider.html5Mode( {
+                enabled: true,
+                requireBase: false
+            } );
 
             var rootState = {
                 name: 'root',
                 url: '/',
-                template: 'Testestestset'
+                template: '<core-page></core-page>'
             };
 
             $stateProvider.state( rootState );
