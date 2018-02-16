@@ -4,3 +4,9 @@ LOG:  autovacuum launcher started
 LOG:  database system is ready to accept connections
 LOG:  received SIGHUP, reloading configuration files
 LOG:  received SIGHUP, reloading configuration files
+ERROR:  relation "category_category" does not exist at character 202
+STATEMENT:  DECLARE "_django_curs_25769803792_3" NO SCROLL CURSOR WITH HOLD FOR SELECT "category_category"."uuid", "category_category"."name", "category_category"."description", "category_category"."created" FROM "category_category" ORDER BY "category_category"."uuid" ASC
+ERROR:  cursor "_django_curs_25769803792_3" does not exist
+STATEMENT:  CLOSE "_django_curs_25769803792_3"
+ERROR:  database "test_postgres" already exists
+STATEMENT:  CREATE DATABASE "test_postgres" 
