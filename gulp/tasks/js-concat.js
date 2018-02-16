@@ -25,7 +25,6 @@ module.exports = gulp.task('js-concat', function() {
         "app.module.js",
         "templates.js",
         "app.config.js",
-        "core/**",
         "*/*.module.js"
     ];
 

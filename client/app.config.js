@@ -1,11 +1,18 @@
-angular.module('app').config(['$locationProvider', '$routeProvider',
-    function config($locationProvider, $routeProvider) {
-        $locationProvider.hashPrefix('!');
+angular.module( 'app' )
+    .config( [ '$locationProvider', '$stateProvider', '$urlRouterProvider',
+        function config( $locationProvider, $stateProvider, $urlRouterProvider ) {
+            $locationProvider.hashPrefix( '!' );
 
-        $routeProvider
-            .when('/', {
-                template: '<core-application></core-application>'
-            })
-            .otherwise('/');
-    }
-]);
+            var rootState = {
+                name: 'root',
+                url: '/',
+                template: 'Testestestset'
+            };
+
+            $stateProvider.state( rootState );
+
+            $urlRouterProvider.when( '', '/' );
+
+            $urlRouterProvider.otherwise( '/404' );
+        }
+    ] );

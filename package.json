@@ -5,10 +5,13 @@
     "main": "index.js",
     "dependencies": {
         "angular": "^1.6.9",
+        "angular-ui-router": "^1.0.3",
         "bootstrap": "^4.0.0",
         "gulp": "^3.9.1",
         "gulp-count": "^1.0.0",
-        "gulp-print": "^5.0.0"
+        "gulp-print": "^5.0.0",
+        "jquery": "^3.3.1",
+        "popper.js": "^1.12.9"
     },
     "devDependencies": {
         "fs": "0.0.1-security",
