@@ -1,4 +1,4 @@
-from rest_framework.test import APIRequestFactory, APITestCase
+from rest_framework.test import APITestCase
 from rest_framework import status
 
 from django.contrib.auth.models import User
@@ -16,7 +16,7 @@ class BookItemTests(APITestCase):
         self.user = User.objects.create(
             username='testuser', password='password1')
         self.category = CategoryItem.objects.create(
-            name='Test', description='Test category 1')
+            name='Book Test Category', description='Test category for books')
         self.book = BookItem.objects.create(
             name='Test Book 1', author='J.C. Penny', category=self.category, created=timezone.now())
 

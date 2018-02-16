@@ -18,9 +18,12 @@ from django.urls import path, include
 
 from book.routers import router as BookRouter
 
+from category.routers import router as CategoryRouter
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
-    path('api/v1/', include(BookRouter.urls))
+    path('api/v1/', include(BookRouter.urls)),
+    path('api/v1/', include(CategoryRouter.urls)),
 ]
