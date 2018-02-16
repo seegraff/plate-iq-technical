@@ -25,7 +25,7 @@ class BookItem(models.Model):
         null=False,
     )
 
-    created = models.DateField(
+    created = models.DateTimeField(
         blank=False,
         null=False,
     )
