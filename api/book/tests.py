@@ -94,8 +94,14 @@ class BookItemTests(APITestCase):
         url = reverse('bookitem-list')
 
         # Get to url
-        response = self.client.get(url)
+        response = self.client.get('%s?%s=%s' % (url, 'limit', 0))
 
         # Run assertions
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(BookItem.objects.count(), len(response.data))
+        self.assertEqual(BookItem.objects.count(), len(response.data['results']))
+
+    def test_list_books_with_pagination(self):
+        pass
+
+    def test_list_books_with_filter(self):
+        pass
