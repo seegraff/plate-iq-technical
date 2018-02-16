@@ -105,3 +105,46 @@ class BookItemTests(APITestCase):
 
     def test_list_books_with_filter(self):
         pass
+
+    def checkout_book(self):
+        # Get url for checkout
+        url = reverse('bookitem-checkout', args=[self.book.pk])
+
+        # Get to url
+        response = self.client.get(url)
+
+        # Update local data
+        self.book = BookItem.objects.get(pk=self.book.pk)
+
+        return response
+
+    def return_book(self):
+        # Get url for return
+        url = reverse('bookitem-return', args=[self.book.pk])
+
+        # Get to url
+        response = self.client.get(url)
+
+        # Update local data
+        self.book = BookItem.objects.get(pk=self.book.pk)
+
+        return response
+
+    def test_checkout_and_return_book(self):
+        checkout_response = self.checkout_book()
+
+        # Run assertions for checkout
+        self.assertEqual(checkout_response.status_code, status.HTTP_200_OK)
+        self.assertEqual(self.book.user, self.user)
+
+        return_response = self.return_book()
+
+        # Run assertions for return
+        self.assertEqual(return_response.status_code, status.HTTP_200_OK)
+        self.assertEqual(self.book.user, None)
+
+    def test_return_unowned_book(self):
+        return_response = self.return_book()
+
+        # Run assertions
+        self.assertEqual(return_response.status_code, status.HTTP_403_FORBIDDEN)
