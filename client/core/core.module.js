@@ -1,1 +1,3 @@
-angular.module( 'core', [] );
+angular.module( 'core', [
+    'books',
+] );
