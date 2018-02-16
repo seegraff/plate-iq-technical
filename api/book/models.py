@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-from category.models import Category
+from category.models import CategoryItem
 
 import uuid
 
@@ -34,12 +34,12 @@ class BookItem(models.Model):
         User,
         unique=False,
         blank=False,
-        null=False,
+        null=True,
         on_delete=models.CASCADE,
     )
 
     category = models.ForeignKey(
-        Category,
+        CategoryItem,
         unique=False,
         blank=False,
         null=False,
