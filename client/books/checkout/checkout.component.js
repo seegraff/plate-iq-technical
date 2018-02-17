@@ -9,14 +9,27 @@ function BooksCheckoutController(
                 template: 'books/checkout/checkout.dialog.html',
                 className: 'ngdialog-theme-default books-checkout',
                 controllerAs: 'dialog',
-                controller: ['$scope', 'BooksApi', ($scope, BooksApi) => {
-                    $scope.data = self.data;
+                controller: ['$scope', 'BooksApi', 'UsersApi', ($scope, BooksApi, UsersApi) => {
+                    var self = this;
 
-                    $scope.dueDate = moment().add(14, 'days').format('MM-DD-YYYY');
+                    self.$onInit = () => {
+                        $scope.data = self.data;
+                        $scope.users = self.users;
 
-                    $scope.submit = () => {
+                        $scope.dueDate = moment().add(14, 'days').format('MM-DD-YYYY');
+
+                        $scope.submit = () => {
+                        };
                     };
-                }]
+                }],
+                resolve: {
+                    users: (UsersApi) => {
+                        return UsersApi.list({limit: 1000});
+                    }
+                },
+                bindings: {
+                    users: '<'
+                }
             });
         };
     };
