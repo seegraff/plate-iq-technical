@@ -30,8 +30,6 @@ class CoreApi {
     }
 
     delete(uuid) {
-        return this.appPath.one(uuid).remove().then((result) => {
-            console.log(this.appName + ' delete result', result);
-        });
+        return this.appPath.one(uuid).remove();
     }
 }

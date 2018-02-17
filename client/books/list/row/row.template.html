@@ -1,4 +1,4 @@
-<div class="row list-row">
+<div class="row list-row" ng-if="$ctrl.data">
     <div class="col-md-4 list-column title">{{ $ctrl.data.name }}</div>
     <div class="col-md-2 list-column author">{{ $ctrl.data.author }}</div>
     <div class="col-md-2 list-column category">{{ $ctrl.data.category.name }}</div>
@@ -8,7 +8,7 @@
     <div class="col-md-2 list-column actions">
         <div>
             <i class="material-icons">edit</i>
-            <i class="material-icons">delete</i>
+            <books-delete data="$ctrl.data"></books-delete>
             <i class="material-icons">shopping_cart</i>
         </div>
     </div>

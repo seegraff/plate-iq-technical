@@ -6,14 +6,22 @@ angular.module( 'app' )
                 url: '/',
                 component: 'corePage',
                 params: {
-                    limit: 10,
-                    offset: 0
+                    limit: {
+                        type: 'string',
+                        value: '10',
+                        squash: true,
+                    },
+                    offset: {
+                        type: 'string',
+                        value: '0',
+                        squash: true
+                    }
                 },
                 resolve: {
                     list: (BooksApi, $stateParams) => {
                         var result;
 
-                        if($stateParams.limit && $stateParams.offset|| $stateParams.limit) {
+                        if($stateParams.limit && $stateParams.offset) {
                             result = BooksApi.list({limit: $stateParams.limit, offset: $stateParams.offset});
                         } else {
                             result = BooksApi.list();
