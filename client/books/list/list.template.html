@@ -1,67 +1,11 @@
-<table class="table table-hover table-sm">
-    <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Title</th>
-            <th scope="col">Author</th>
-            <th scope="col">Category</th>
-            <th scope="col">Published</th>
-            <th scope="col">Availability</th>
-            <th scope="col">Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Testing in a Big Wide World of Test: How I Conquered the Test</td>
-            <td>Test Testerson</td>
-            <td>Testing</td>
-            <td>2/16/2018</td>
-            <td><i class="material-icons rented">close</i></td>
-            <td>
-                <i class="material-icons edit">mode edit</i>
-                <i class="material-icons delete">delete</i>
-                <i class="material-icons cart">shopping cart</i>
-            </td>
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Testing in a Big Wide World of Test: How I Conquered the Test</td>
-            <td>Test Testerson</td>
-            <td>Testing</td>
-            <td>2/16/2018</td>
-            <td><i class="material-icons available">done</i></td>
-            <td>
-                <i class="material-icons edit">mode edit</i>
-                <i class="material-icons delete">delete</i>
-                <i class="material-icons cart">shopping cart</i>
-            </td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Testing in a Big Wide World of Test: How I Conquered the Test</td>
-            <td>Test Testerson</td>
-            <td>Testing</td>
-            <td>2/16/2018</td>
-            <td><i class="material-icons rented">close</i></td>
-            <td>
-                <i class="material-icons edit">mode edit</i>
-                <i class="material-icons delete">delete</i>
-                <i class="material-icons cart">shopping cart</i>
-            </td>
-        </tr>
-        <tr>
-            <th scope="row">4</th>
-            <td>Testing in a Big Wide World of Test: How I Conquered the Test</td>
-            <td>Test Testerson</td>
-            <td>Testing</td>
-            <td>2/16/2018</td>
-            <td><i class="material-icons rented">close</i></td>
-            <td>
-                <i class="material-icons edit">mode edit</i>
-                <i class="material-icons delete">delete</i>
-                <i class="material-icons cart">shopping cart</i>
-            </td>
-        </tr>
-    </tbody>
-</table>
+<div class="container books-list">
+    <div class="row list-header">
+        <div class="col-md-4">Title</div>
+        <div class="col-md-2">Author</div>
+        <div class="col-md-2">Category</div>
+        <div class="col-md-2">Published</div>
+        <div class="col-md-1">Availability</div>
+        <div class="col-md-1">Actions</div>
+    </div>
+    <list-row ng-cloak ng-repeat="row in $ctrl.data" data="row"></list-row>
+</div>
