@@ -7,8 +7,8 @@ class CoreApi {
         this.appPath = this.basePath.one(this.appName);
     }
 
-    list() {
-        return this.appPath.get();
+    list(parameters) {
+        return this.appPath.get(parameters);
     }
 
     create(data) {

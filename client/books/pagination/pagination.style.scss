@@ -5,13 +5,27 @@ books-pagination {
 
     & > span {
         margin-right: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         &:last-of-type {
-            margin-right: 0px;
+            margin-right: 0;
         }
 
         &.current-page {
             font-weight: 700;
+        }
+
+        &.next-page,
+        &.previous-page {
+            &:hover {
+                cursor: pointer;
+            }
+
+            &.disabled {
+                display: none;
+            }
         }
     }
 }

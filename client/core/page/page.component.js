@@ -1,25 +1,31 @@
 function CorePageController(
+    $scope,
     BooksApi,
-    CategoriesApi,
-    $log
+    CategoriesApi
 ) {
     var self = this;
 
-    self.list = {};
-
-    BooksApi.list().then((result) => {
-        self.list = result;
-    });
+    self.$onInit = () => {
+        self.pagination = {
+            next: self.list.next,
+            previous: self.list.previous,
+            totalPages: Math.floor( self.list.count / 10 ),
+            currentPage: 1
+        };
+    };
 }
 
 CorePageController.$inject = [
+    '$scope',
     'BooksApi',
-    'CategoriesApi',
-    '$log'
+    'CategoriesApi'
 ];
 
 angular.module( 'core' )
     .component( 'corePage', {
         templateUrl: 'core/page/page.template.html',
-        controller: CorePageController
+        controller: CorePageController,
+        bindings: {
+            list: '<'
+        }
     } );

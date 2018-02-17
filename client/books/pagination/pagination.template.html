@@ -1,3 +1,6 @@
-<span class="previous-page">1</span>
-<span class="current-page">2</span>
-<span class="next-page">3</span>
+<span class="previous-page" ng-class="{'disabled': !$ctrl.data.previous}" ng-click="!$ctrl.data.previous || $ctrl.goToPreviousPage()"><i class="material-icons">chevron_left</i></span>
+<span ng-repeat="i in $ctrl.getNumberArray($ctrl.data.totalPages) track by $index"
+      ng-class="{ 'current-page': $ctrl.data.currentPage == $index+1 }">
+     {{ $index+1 }}
+  </span>
+<span class="next-page" ng-class="{'disabled': !$ctrl.data.next}" ng-click="!$ctrl.data.next || $ctrl.goToNextPage()"><i class="material-icons">chevron_right</i></span>
