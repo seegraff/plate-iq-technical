@@ -1,4 +1,4 @@
-books-create {
+books-create > div {
     display: flex;
     border-radius: 1px;
     padding: 10px;
@@ -10,5 +10,40 @@ books-create {
 
     & > span {
         margin-left: 10px;
+    }
+}
+
+div.books-create {
+    & > div.ngdialog-content {
+        padding: 30px 20px;
+        text-align: center;
+
+        & > form {
+            & > button,
+            & > input,
+            & > select {
+                font-size: 1em;
+                font-family: 'Roboto';
+                padding: 5px 10px;
+                border-radius: 1px;
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            & > button {
+                margin-bottom: 0px;
+            }
+        }
+
+        & > div {
+            text-align: center;
+
+            & > i {
+                display: block;
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
     }
 }

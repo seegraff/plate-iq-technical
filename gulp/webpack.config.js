@@ -39,7 +39,8 @@ module.exports = function ( files ) {
         plugins: [
             new webpack.optimize.CommonsChunkPlugin( [ "app", "vendor" ], "[name].js" ),
             new webpack.ProvidePlugin( {
-                "moment": "moment"
+                "moment": "moment",
+                "uuid": "uuid-js",
             } )
         ]
     };

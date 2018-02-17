@@ -7,7 +7,8 @@
         "moment": "^2.20.1",
         "ng-dialog": "^1.4.0",
         "restangular": "^1.6.1",
-        "underscore": "^1.8.3"
+        "underscore": "^1.8.3",
+        "uuid-js": "^0.7.5"
     },
     "devDependencies": {
         "fs": "0.0.1-security",

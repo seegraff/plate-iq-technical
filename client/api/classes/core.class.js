@@ -12,9 +12,7 @@ class CoreApi {
     }
 
     create(data) {
-        return this.appPath.post(data).then((result) => {
-            console.log(this.appName + ' create result', result);
-        });
+        return this.appPath.customPOST(data);
     }
 
     retrieve(uuid) {

@@ -1,0 +1,15 @@
+<form ng-if="created === false && error === false">
+    <input ng-model="models.name" type="text" placeholder="Title" />
+    <input ng-model="models.author" type="text" placeholder="Author" />
+    <select ng-model="models.category" required>
+        <option value="" disabled selected>Category</option>
+        <option ng-repeat="category in data.results" value="{{ category.uuid }}">{{ category.name }}</option>
+    </select>
+    <input ng-model="models.published" type="date" />
+    <button ng-click="submit()">Create</button>
+</form>
+<i class="material-icons" ng-if="created === true && error === false">done</i>
+<div ng-if="created === false && error === true">
+    <i class="material-icons">error</i>
+    <span>There was a problem creating your book. Please try again.</span>
+</div>

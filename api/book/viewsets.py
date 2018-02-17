@@ -8,6 +8,8 @@ from rest_framework import status
 from book.serializers import BookItemSerializer
 from book.models import BookItem
 
+import uuid
+
 
 class BookItemViewSet(viewsets.ModelViewSet):
     queryset = BookItem.objects.all()
