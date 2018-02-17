@@ -1,6 +1,22 @@
-function CorePageController() {}
+function CorePageController(
+    BooksApi,
+    CategoriesApi,
+    $log
+) {
+    var self = this;
 
-CorePageController.$inject = [];
+    self.list = {};
+
+    BooksApi.list().then((result) => {
+        self.list = result;
+    });
+}
+
+CorePageController.$inject = [
+    'BooksApi',
+    'CategoriesApi',
+    '$log'
+];
 
 angular.module( 'core' )
     .component( 'corePage', {

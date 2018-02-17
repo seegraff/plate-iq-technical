@@ -9,4 +9,4 @@ BooksApiService.$inject = [
 ];
 
 angular.module( 'api' )
-    .service( 'booksApi', BooksApiService );
+    .service( 'BooksApi', BooksApiService );

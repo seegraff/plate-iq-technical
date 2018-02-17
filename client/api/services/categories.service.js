@@ -9,4 +9,4 @@ CategoriesApiService.$inject = [
 ];
 
 angular.module( 'api' )
-    .service( 'categoriesApi', CategoriesApiService );
+    .service( 'CategoriesApi', CategoriesApiService );

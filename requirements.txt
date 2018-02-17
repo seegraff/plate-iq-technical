@@ -1,9 +1,11 @@
 Django==2.0.2
+django-autofixture==0.12.1
 django-extensions==1.9.9
 django-filter==1.1.0
 djangorestframework==3.7.7
 Markdown==2.6.11
 psycopg2==2.7.4
 pytz==2018.3
+sampledata==0.3.7
 six==1.11.0
 typing==3.6.4

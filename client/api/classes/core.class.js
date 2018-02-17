@@ -8,9 +8,7 @@ class CoreApi {
     }
 
     list() {
-        return this.appPath.get().then((result) => {
-            console.log(this.appName + ' list result', result);
-        });
+        return this.appPath.get();
     }
 
     create(data) {
