@@ -14,8 +14,10 @@ module.exports = function ( files ) {
     var vendorFiles = [
         "jquery",
         "popper.js",
+        "underscore",
         "angular",
         "angular-ui-router",
+        "restangular",
         "bootstrap",
     ];
 

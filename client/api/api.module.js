@@ -1,1 +1,3 @@
-angular.module( 'api', [] );
+angular.module( 'api', [
+    'restangular',
+] );

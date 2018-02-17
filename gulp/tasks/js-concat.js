@@ -25,7 +25,9 @@ module.exports = gulp.task('js-concat', function() {
         "app.module.js",
         "templates.js",
         "app.config.js",
-        "*/*.module.js"
+        "*/*.module.js",
+        "**/core.class.js",
+        "**/*.class.js"
     ];
 
     return require('../jobs/concat-files')(files, name, dest, order);
