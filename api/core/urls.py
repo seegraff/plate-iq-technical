@@ -23,6 +23,8 @@ from book.routers import router as BookRouter
 
 from category.routers import router as CategoryRouter
 
+from user.routers import router as UserRouter
+
 
 urlpatterns = [
     path('', TemplateView.as_view(template_name='index.html'), name='root_index'),
@@ -30,4 +32,5 @@ urlpatterns = [
     path('api-auth/', include('rest_framework.urls')),
     path('api/v1/', include(BookRouter.urls)),
     path('api/v1/', include(CategoryRouter.urls)),
+    path('api/v1/', include(UserRouter.urls)),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

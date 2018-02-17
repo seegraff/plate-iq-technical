@@ -1,0 +1,10 @@
+i.books-checkout {
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+div.books-checkout {
+    & > div.ngdialog-content {
+    }
+}

@@ -9,7 +9,7 @@
         <div>
             <i class="material-icons">edit</i>
             <books-delete data="$ctrl.data"></books-delete>
-            <i class="material-icons" ng-if="!$ctrl.data.user">shopping_cart</i>
+            <books-checkout ng-if="!$ctrl.data.user" data="$ctrl.data.user"></books-checkout>
         </div>
     </div>
 </div>

@@ -27,6 +27,8 @@ div.list-row {
             align-items: center;
             justify-content: center;
 
+            & > books-delete > i,
+            & > books-checkout > i,
             & > i {
                 width: 24px;
                 height: 24px;
