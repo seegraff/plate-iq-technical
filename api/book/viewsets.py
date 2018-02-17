@@ -16,18 +16,18 @@ class BookItemViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         queryset = self.queryset
 
-        title = self.request.query_params.get('title', None)
+        name = self.request.query_params.get('name', None)
         author = self.request.query_params.get('author', None)
         category = self.request.query_params.get('category', None)
         fr = self.request.query_params.get('from', None)
         to = self.request.query_params.get('to', None)
         availability = self.request.query_params.get('availability', None)
 
-        if title is not None:
-            queryset = queryset.filter(title__icontains=title)
+        if name is not None:
+            queryset = queryset.filter(name__icontains=name)
 
         if author is not None:
-            queryset = queryset.filter(author__icontains=title)
+            queryset = queryset.filter(author__icontains=author)
 
         if category is not None:
             queryset = queryset.filter(category=category)

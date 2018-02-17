@@ -20,6 +20,7 @@ module.exports = function ( files ) {
         "ng-dialog",
         "restangular",
         "bootstrap",
+        "moment",
     ];
 
     return {
@@ -37,7 +38,9 @@ module.exports = function ( files ) {
         },
         plugins: [
             new webpack.optimize.CommonsChunkPlugin( [ "app", "vendor" ], "[name].js" ),
-            new webpack.ProvidePlugin( {} )
+            new webpack.ProvidePlugin( {
+                "moment": "moment"
+            } )
         ]
     };
 };

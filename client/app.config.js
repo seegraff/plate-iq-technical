@@ -16,7 +16,7 @@ angular.module( 'app' )
                         value: null,
                         squash: true
                     },
-                    title: {
+                    name: {
                         type: 'string',
                         value: null,
                         squash: true

@@ -1,10 +1,11 @@
 function BooksFilterController(
-    $state
+    $state,
+    $filter
 ) {
     var self = this;
 
     self.models = {
-        title: null,
+        name: null,
         author: null,
         category: null,
         from: null,
@@ -13,12 +14,17 @@ function BooksFilterController(
     };
 
     self.submit = () => {
-        var filterActive = Object.keys(self.models).some((key) => {
-            return self.models[key] && self.models[key] !== '';
+        var models = Object.assign({}, self.models);
+
+        models.to = $filter('date')(self.models.to, 'yyyy-MM-dd');
+        models.from = $filter('date')(self.models.from, 'yyyy-MM-dd');
+
+        var filterActive = Object.keys(models).some((key) => {
+            return models[key] && models[key] !== '';
         });
 
         if(filterActive) {
-            $state.go('root', self.models);
+            $state.go('root', models);
         }
     };
 
@@ -28,6 +34,7 @@ function BooksFilterController(
 
 BooksFilterController.$inject = [
     '$state',
+    '$filter'
 ];
 
 angular.module( 'books' )

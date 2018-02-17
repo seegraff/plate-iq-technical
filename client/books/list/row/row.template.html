@@ -3,13 +3,13 @@
     <div class="col-md-2 list-column author">{{ $ctrl.data.author }}</div>
     <div class="col-md-2 list-column category">{{ $ctrl.data.category.name }}</div>
     <div class="col-md-1 list-column published">{{ $ctrl.data.published }}</div>
-    <div class="col-md-1 list-column availability"><i class="material-icons rented">close</i></div>
-    <!-- <div><i class="material-icons available">done</i></div> -->
+    <div class="col-md-1 list-column availability" ng-if="$ctrl.data.user">{{ $ctrl.data.user.username }}</div>
+    <div class="col-md-1 list-column availability" ng-if="!$ctrl.data.user"><i class="material-icons rented">done</i></div>
     <div class="col-md-2 list-column actions">
         <div>
             <i class="material-icons">edit</i>
             <books-delete data="$ctrl.data"></books-delete>
-            <i class="material-icons">shopping_cart</i>
+            <i class="material-icons" ng-if="!$ctrl.data.user">shopping_cart</i>
         </div>
     </div>
 </div>

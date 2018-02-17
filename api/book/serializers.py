@@ -9,3 +9,4 @@ class BookItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = BookItem
         fields = '__all__'
+        depth = 2
