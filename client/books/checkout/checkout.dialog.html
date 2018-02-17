@@ -1,4 +1,4 @@
-<form ng-if="created === false && error === false">
+<form ng-if="updated === false && error === false">
     <select ng-model="models.user" required>
         <option value="" disabled selected>User</option>
         <option ng-repeat="user in users.results" value="{{ user.id }}">{{ user.username }}</option>
@@ -6,8 +6,8 @@
     <span>Due to be returned on {{ dueDate }}</span>
     <button ng-click="submit()">Checkout</button>
 </form>
-<i class="material-icons" ng-if="created === true && error === false">done</i>
-<div ng-if="created === false && error === true">
+<i class="material-icons" ng-if="updated === true && error === false">done</i>
+<div ng-if="updated === false && error === true">
     <i class="material-icons">error</i>
     <span>There was a problem checking this book out. Please try again.</span>
 </div>

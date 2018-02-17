@@ -1,1 +1,2 @@
-<i class="material-icons books-checkout" ng-click="$ctrl.click()">shopping_cart</i>
+<i class="material-icons books-checkout" ng-if="!$ctrl.data.user" ng-click="$ctrl.click()">shopping_cart</i>
+<i class="material-icons books-checkout" ng-if="$ctrl.data.user" ng-click="$ctrl.click()">keyboard_return</i>

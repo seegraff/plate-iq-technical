@@ -3,11 +3,11 @@ class BooksApi extends CoreApi {
         super(restangular, 'books');
     }
 
-    checkout(uuid) {
-        return this.appPath.one(uuid, 'checkout').one().get();
+    checkout(book, user) {
+        return this.appPath.one(book, 'checkout').one(user).get();
     }
 
-    checkin(uuid) {
-        return this.appPath.one(uuid, 'return').one().get();
+    checkin(book) {
+        return this.appPath.one(book, 'return').get();
     }
 }
