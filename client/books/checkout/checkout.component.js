@@ -9,19 +9,25 @@ function BooksCheckoutController(
                 template: 'books/checkout/checkout.dialog.html',
                 className: 'ngdialog-theme-default books-checkout',
                 controllerAs: 'dialog',
-                controller: ['$scope', 'BooksApi', 'UsersApi', ($scope, BooksApi, UsersApi) => {
+                controller: ($scope, BooksApi, users) => {
                     var self = this;
 
-                    self.$onInit = () => {
-                        $scope.data = self.data;
-                        $scope.users = self.users;
+                    $scope.created = false;
+                    $scope.error = false;
 
-                        $scope.dueDate = moment().add(14, 'days').format('MM-DD-YYYY');
+                    $scope.users = users;
+                    $scope.data = self.data;
 
-                        $scope.submit = () => {
-                        };
+                    $scope.dueDate = moment().add(14, 'days').format('MM-DD-YYYY');
+
+                    $scope.models = {
+                        user: null
                     };
-                }],
+
+                    $scope.submit = () => {
+                        BooksApi.checkout();
+                    };
+                },
                 resolve: {
                     users: (UsersApi) => {
                         return UsersApi.list({limit: 1000});

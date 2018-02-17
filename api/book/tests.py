@@ -126,7 +126,7 @@ class BookItemTests(APITestCase):
 
     def checkout_book(self):
         # Get url for checkout
-        url = reverse('bookitem-checkout', args=[self.book.pk])
+        url = reverse('bookitem-checkout', args=[self.book.pk, self.user.pk])
 
         # Get to url
         response = self.client.get(url)
@@ -160,9 +160,3 @@ class BookItemTests(APITestCase):
         # Run assertions for return
         self.assertEqual(return_response.status_code, status.HTTP_200_OK)
         self.assertEqual(self.book.user, None)
-
-    def test_return_unowned_book(self):
-        return_response = self.return_book()
-
-        # Run assertions
-        self.assertEqual(return_response.status_code, status.HTTP_403_FORBIDDEN)

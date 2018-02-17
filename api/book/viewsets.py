@@ -1,4 +1,5 @@
 from django.shortcuts import get_object_or_404
+from django.contrib.auth.models import User
 
 from rest_framework import viewsets
 from rest_framework.decorators import detail_route
@@ -48,11 +49,10 @@ class BookItemViewSet(viewsets.ModelViewSet):
 
         return queryset
 
-    @detail_route(methods=['get'], url_name='checkout', url_path='checkout')
-    def checkout_book(self, request, pk=None):
-        queryset = BookItem.objects.all()
-        book = get_object_or_404(queryset, pk=pk)
-        user = request.user
+    @detail_route(methods=['get'], url_name='checkout', url_path=r'checkout/(?P<user>[0-9a-f-]+)')
+    def checkout_book(self, request, pk=None, user=None):
+        book = get_object_or_404(BookItem.objects.all(), pk=pk)
+        user = get_object_or_404(User.objects.all(), pk=user)
 
         book.user = user
         book.save()
@@ -62,17 +62,12 @@ class BookItemViewSet(viewsets.ModelViewSet):
 
     @detail_route(methods=['get'], url_name='return', url_path='return')
     def return_book(self, request, pk=None):
-        queryset = BookItem.objects.all()
-        book = get_object_or_404(queryset, pk=pk)
-        user = request.user
+        book = get_object_or_404(BookItem.objects.all(), pk=pk)
 
-        if book.user == user:
-            book.user = None
-            book.save()
+        book.user = None
+        book.save()
 
-            serializer = BookItemSerializer(book)
-            result = Response(serializer.data)
-        else:
-            result = Response('Cannot return book from user that has not checked it out', status=status.HTTP_403_FORBIDDEN)
+        serializer = BookItemSerializer(book)
+        result = Response(serializer.data)
 
         return result
