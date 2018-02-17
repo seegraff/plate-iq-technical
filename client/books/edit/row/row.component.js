@@ -11,6 +11,8 @@ function EditRowController(
             published: new Date(self.data.published)
         };
 
+        console.log('edit row', self.data, self.categories.results);
+
         self.save = () => {
             var models = Object.assign({}, self.models);
 

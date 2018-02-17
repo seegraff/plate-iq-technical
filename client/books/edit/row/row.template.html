@@ -6,9 +6,7 @@
         <input ng-model="$ctrl.models.author" type="text" placeholder="Author" />
     </div>
     <div class="col-md-2 list-column category">
-        <select ng-model="$ctrl.models.category" required>
-            <option ng-repeat="category in $ctrl.categories.results" value="{{ category.uuid }}" ng-selected="{{category.uuid == $ctrl.data.category.uuid}}">{{ category.name }}</option>
-        </select>
+        <select ng-model="$ctrl.models.category" ng-options="category.name for category in $ctrl.categories.results track by category.uuid" ng-selected="$ctrl.data.category.uuid" required></select>
     </div>
     <div class="col-md-2 list-column published">
         <input ng-model="$ctrl.models.published" type="date" />

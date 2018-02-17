@@ -2,10 +2,6 @@ function BooksListRowController() {
     var self = this;
 
     self.editing = false;
-
-    self.$onInit = () => {
-        console.log('Creating row', self.data);
-    };
 }
 
 BooksListRowController.$inject = [];
