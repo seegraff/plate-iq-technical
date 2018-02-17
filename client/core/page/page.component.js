@@ -7,6 +7,7 @@ angular.module( 'core' )
         templateUrl: 'core/page/page.template.html',
         controller: CorePageController,
         bindings: {
-            list: '<'
+            books: '<',
+            categories: '<'
         }
     } );

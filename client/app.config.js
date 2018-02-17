@@ -8,26 +8,51 @@ angular.module( 'app' )
                 params: {
                     limit: {
                         type: 'string',
-                        value: '10',
+                        value: null,
                         squash: true,
                     },
                     offset: {
                         type: 'string',
-                        value: '0',
+                        value: null,
+                        squash: true
+                    },
+                    title: {
+                        type: 'string',
+                        value: null,
+                        squash: true
+                    },
+                    author: {
+                        type: 'string',
+                        value: null,
+                        squash: true
+                    },
+                    category: {
+                        type: 'string',
+                        value: null,
+                        squash: true
+                    },
+                    from: {
+                        type: 'string',
+                        value: null,
+                        squash: true
+                    },
+                    to: {
+                        type: 'string',
+                        value: null,
+                        squash: true
+                    },
+                    availability: {
+                        type: 'string',
+                        value: null,
                         squash: true
                     }
                 },
                 resolve: {
-                    list: (BooksApi, $stateParams) => {
-                        var result;
-
-                        if($stateParams.limit && $stateParams.offset) {
-                            result = BooksApi.list({limit: $stateParams.limit, offset: $stateParams.offset});
-                        } else {
-                            result = BooksApi.list();
-                        }
-
-                        return result;
+                    books: (BooksApi, $stateParams) => {
+                        return BooksApi.list($stateParams);;
+                    },
+                    categories: (CategoriesApi) => {
+                        return CategoriesApi.list({limit: 1000});
                     }
                 }
             };

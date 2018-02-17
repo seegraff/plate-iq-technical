@@ -1,16 +1,14 @@
-<input class="title-filter" type="text" placeholder="Title" />
-<input class="author-filter" type="text" placeholder="Author" />
-<select class="category-filter">
+<input ng-model="$ctrl.models.title" class="title-filter" type="text" placeholder="Title" />
+<input ng-model="$ctrl.models.author" class="author-filter" type="text" placeholder="Author" />
+<select ng-model="$ctrl.models.category" class="category-filter">
     <option value="" disabled selected>Category</option>
-    <option value="test">Test</option>
-    <option value="test">Test</option>
-    <option value="test">Test</option>
+    <option ng-repeat="category in $ctrl.data.results" value="{{category.uuid}}">{{ category.name }}</option>
 </select>
-<input class="from-date" type="date" />
-<input class="to-date" type="date" />
-<select class="rented-filter">
+<input ng-model="$ctrl.models.from" class="from-date" type="date" />
+<input ng-model="$ctrl.models.to" class="to-date" type="date" />
+<select ng-model="$ctrl.models.availability" class="rented-filter">
     <option value="" disabled selected>Availability</option>
-    <option value="test">Rented</option>
-    <option value="test">Available</option>
+    <option value="false">Rented</option>
+    <option value="true">Available</option>
 </select>
-<button>Filter</button>
+<button ng-click="$ctrl.submit()">Filter</button>
