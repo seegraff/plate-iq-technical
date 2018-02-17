@@ -25,7 +25,7 @@ class BookItem(models.Model):
         null=False,
     )
 
-    created = models.DateTimeField(
+    published = models.DateField(
         blank=False,
         null=False,
     )
@@ -33,7 +33,7 @@ class BookItem(models.Model):
     user = models.ForeignKey(
         User,
         unique=False,
-        blank=False,
+        blank=True,
         null=True,
         on_delete=models.CASCADE,
     )
@@ -45,3 +45,10 @@ class BookItem(models.Model):
         null=False,
         on_delete=models.CASCADE,
     )
+
+    created = models.DateField(
+        auto_now_add=True,
+    )
+
+    def __str__(self):
+        return self.name

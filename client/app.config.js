@@ -1,6 +1,9 @@
 angular.module( 'app' )
-    .config( [ '$locationProvider', '$stateProvider', '$urlRouterProvider',
-        function config( $locationProvider, $stateProvider, $urlRouterProvider ) {
+    .config( [ '$locationProvider', '$stateProvider', '$urlRouterProvider', '$httpProvider',
+        function config( $locationProvider, $stateProvider, $urlRouterProvider, $httpProvider ) {
+            $httpProvider.defaults.xsrfCookieName = 'csrftoken';
+            $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
+
             $locationProvider.html5Mode( {
                 enabled: true,
                 requireBase: false

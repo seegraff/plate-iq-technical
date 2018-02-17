@@ -17,6 +17,7 @@ module.exports = function ( files ) {
         "underscore",
         "angular",
         "angular-ui-router",
+        "ng-dialog",
         "restangular",
         "bootstrap",
     ];

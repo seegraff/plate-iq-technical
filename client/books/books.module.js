@@ -1,1 +1,3 @@
-angular.module( 'books', [] );
+angular.module( 'books', [
+    'ngDialog',
+] );

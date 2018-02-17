@@ -4,6 +4,7 @@
     "description": "- Python 3\r - Django 2\r - Angular 2\r - PostgreSQL @ localhost:5432",
     "main": "index.js",
     "dependencies": {
+        "ng-dialog": "^1.4.0",
         "restangular": "^1.6.1",
         "underscore": "^1.8.3"
     },

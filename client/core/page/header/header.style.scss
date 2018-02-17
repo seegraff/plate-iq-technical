@@ -13,19 +13,4 @@ page-header {
         font-weight: 700;
         margin-bottom: 0;
     }
-
-    & > div.create-book {
-        display: flex;
-        border-radius: 1px;
-        padding: 10px;
-
-        &:hover {
-            cursor: pointer;
-            background-color: rgba(0, 0, 0, 0.1);
-        }
-
-        & > span {
-            margin-left: 10px;
-        }
-    }
 }
