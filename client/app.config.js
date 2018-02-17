@@ -13,8 +13,8 @@ angular.module( 'app' )
                     list: (BooksApi, $stateParams) => {
                         var result;
 
-                        if($stateParams.limit && $stateParams.offset) {
-                            result = BooksApi.list({limit: $stateParams.limit, offset: $stateParams.limit});
+                        if($stateParams.limit && $stateParams.offset|| $stateParams.limit) {
+                            result = BooksApi.list({limit: $stateParams.limit, offset: $stateParams.offset});
                         } else {
                             result = BooksApi.list();
                         }
