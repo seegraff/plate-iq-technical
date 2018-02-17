@@ -1,0 +1,20 @@
+<div class="row list-row edit-row">
+    <div class="col-md-4 list-column title">
+        <input ng-model="$ctrl.models.name" type="text" placeholder="Title" />
+    </div>
+    <div class="col-md-2 list-column author">
+        <input ng-model="$ctrl.models.author" type="text" placeholder="Author" />
+    </div>
+    <div class="col-md-2 list-column category">
+        <select ng-model="$ctrl.models.category" required>
+            <option ng-repeat="category in $ctrl.categories.results" value="{{ category.uuid }}" ng-selected="{{category.uuid == $ctrl.data.category.uuid}}">{{ category.name }}</option>
+        </select>
+    </div>
+    <div class="col-md-2 list-column published">
+        <input ng-model="$ctrl.models.published" type="date" />
+    </div>
+    <div class="col-md-2 list-column submit">
+        <button ng-click="$ctrl.save()">Save</button>
+        <button ng-click="$ctrl.quit()">Quit</button>
+    </div>
+</div>

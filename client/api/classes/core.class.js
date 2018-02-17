@@ -22,9 +22,7 @@ class CoreApi {
     }
 
     update(uuid, data) {
-        return this.appPath.one(uuid).post(data).then((result) => {
-            console.log(this.appName + ' update result', result);
-        });
+        return this.appPath.one(uuid).customPATCH(data);
     }
 
     delete(uuid) {

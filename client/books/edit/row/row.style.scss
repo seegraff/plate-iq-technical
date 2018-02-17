@@ -1,0 +1,13 @@
+div.edit-row {
+    & > div > input,
+    & > div > select,
+    & > div > button {
+        width: 100%;
+        font-size: 1em;
+        font-family: 'Roboto';
+        padding: 5px 10px;
+        border-radius: 1px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        width: 100%;
+    }
+}

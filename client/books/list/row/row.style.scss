@@ -27,6 +27,7 @@ div.list-row {
             align-items: center;
             justify-content: center;
 
+            & > books-edit > i,
             & > books-delete > i,
             & > books-checkout > i,
             & > i {

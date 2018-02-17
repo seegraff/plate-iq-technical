@@ -6,7 +6,7 @@ from rest_framework.decorators import detail_route
 from rest_framework.response import Response
 from rest_framework import status
 
-from book.serializers import BookItemSerializer
+from book.serializers import BookItemSerializer, BookItemCreateSerializer
 from book.models import BookItem
 
 import uuid
@@ -15,6 +15,12 @@ import uuid
 class BookItemViewSet(viewsets.ModelViewSet):
     queryset = BookItem.objects.all()
     serializer_class = BookItemSerializer
+
+    def get_serializer_class(self):
+        if self.request.method == 'POST':
+            return BookItemCreateSerializer
+        else:
+            return BookItemSerializer
 
     def get_queryset(self):
         queryset = self.queryset

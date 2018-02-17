@@ -9,6 +9,7 @@ angular.module( 'books' )
         templateUrl: 'books/list/list.template.html',
         controller: BooksListController,
         bindings: {
-            'data': '='
+            'data': '=',
+            'categories': '<'
         }
     } );
