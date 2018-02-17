@@ -1,0 +1,17 @@
+books-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & > span {
+        margin-right: 10px;
+
+        &:last-of-type {
+            margin-right: 0px;
+        }
+
+        &.current-page {
+            font-weight: 700;
+        }
+    }
+}
