@@ -18,7 +18,7 @@ class BookItemTests(APITestCase):
         self.category = CategoryItem.objects.create(
             name='Book Test Category', description='Test category for books')
         self.book = BookItem.objects.create(
-            name='Test Book 1', author='J.C. Penny', category=self.category, created=timezone.now())
+            name='Test Book 1', author='J.C. Penny', category=self.category, published=timezone.now().date())
 
         # Force authentication for user in all requests
         self.client.force_authenticate(user=self.user)
@@ -31,8 +31,8 @@ class BookItemTests(APITestCase):
         data = {
             'name': 'Test Book 2',
             'author': 'Book Author',
-            'category': self.category.pk,
-            'created': timezone.now(),
+            'category': self.category.uuid,
+            'published': timezone.now().date(),
         }
 
         # Post to url with data
@@ -57,7 +57,7 @@ class BookItemTests(APITestCase):
 
         # Recreate book instance for remaining tests
         self.book = BookItem.objects.create(
-            name='Test Book 1', author='J.C. Penny', category=self.category, created=timezone.now())
+            name='Test Book 1', author='J.C. Penny', category=self.category, published=timezone.now().date())
 
     def test_update_book(self):
         # Get url for update
@@ -101,10 +101,28 @@ class BookItemTests(APITestCase):
         self.assertEqual(BookItem.objects.count(), len(response.data['results']))
 
     def test_list_books_with_pagination(self):
-        pass
+        # Get url for list
+        url = reverse('bookitem-list')
+
+        # Get to url
+        response = self.client.get(url)
+
+        # Run assertions
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(BookItem.objects.count(), response.data['count'])
 
     def test_list_books_with_filter(self):
-        pass
+        # Get url for list
+        url = reverse('bookitem-list')
+
+        # Get to url
+        response = self.client.get(url, {
+            'availability': 'true'
+        })
+
+        # Run assertions
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(BookItem.objects.filter(user__isnull=True).count(), response.data['count'])
 
     def checkout_book(self):
         # Get url for checkout

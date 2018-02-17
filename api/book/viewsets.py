@@ -13,6 +13,39 @@ class BookItemViewSet(viewsets.ModelViewSet):
     queryset = BookItem.objects.all()
     serializer_class = BookItemSerializer
 
+    def get_queryset(self):
+        queryset = self.queryset
+
+        title = self.request.query_params.get('title', None)
+        author = self.request.query_params.get('author', None)
+        category = self.request.query_params.get('category', None)
+        fr = self.request.query_params.get('from', None)
+        to = self.request.query_params.get('to', None)
+        availability = self.request.query_params.get('availability', None)
+
+        if title is not None:
+            queryset = queryset.filter(title__icontains=title)
+
+        if author is not None:
+            queryset = queryset.filter(author__icontains=title)
+
+        if category is not None:
+            queryset = queryset.filter(category=category)
+
+        if fr is not None:
+            queryset = queryset.filter(published__gte=fr)
+
+        if to is not None:
+            queryset = queryset.filter(published__lte=to)
+
+        if availability is not None:
+            if availability == True or availability == 'true':
+                queryset = queryset.filter(user__isnull=True)
+            else:
+                queryset = queryset.filter(user__isnull=False)
+
+        return queryset
+
     @detail_route(methods=['get'], url_name='checkout', url_path='checkout')
     def checkout_book(self, request, pk=None):
         queryset = BookItem.objects.all()
