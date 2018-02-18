@@ -7,8 +7,11 @@ from category.serializers import CategoryItemSerializer
 
 
 class BookItemSerializer(serializers.ModelSerializer):
+    category = serializers.PrimaryKeyRelatedField(many=False, required=True, queryset=CategoryItem.objects.all())
+
     class Meta:
         model = BookItem
+
         fields = (
             'uuid',
             'name',
@@ -18,21 +21,20 @@ class BookItemSerializer(serializers.ModelSerializer):
             'category',
             'created'
         )
+
         depth = 2
 
+    def to_representation(self, instance):
+        result = super(BookItemSerializer, self).to_representation(instance)
 
-class BookItemCreateSerializer(serializers.ModelSerializer):
-    category = serializers.PrimaryKeyRelatedField(
-        queryset=CategoryItem.objects.all(), many=False)
+        if instance.category:
+            category_uuid = instance.category.uuid
+            category = CategoryItem.objects.get(uuid=category_uuid)
+            result['category'] = {
+                'uuid': category.uuid,
+                'name': category.name,
+                'description': category.description,
+                'created': category.created
+            }
 
-    class Meta:
-        model = BookItem
-        fields = (
-            'uuid',
-            'name',
-            'author',
-            'published',
-            'user',
-            'category',
-            'created'
-        )
+        return result

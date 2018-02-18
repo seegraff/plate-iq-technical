@@ -17,6 +17,7 @@ function EditRowController(
             var models = Object.assign({}, self.models);
 
             models.published = moment(models.published).format('YYYY-MM-DD')
+            models.category = models.category.uuid;
 
             BooksApi.update(self.data.uuid, models).then((result) => {
                 self.data = result;
