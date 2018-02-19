@@ -33,7 +33,10 @@ function BooksFilterController(
 
             models.to = $filter('date')(self.models.to, 'yyyy-MM-dd');
             models.from = $filter('date')(self.models.from, 'yyyy-MM-dd');
-            models.category = models.category.uuid;
+
+            if(models.category && models.category['uuid']) {
+                models.category = models.category.uuid;
+            }
 
             var filterActive = Object.keys(models).some((key) => {
                 return models[key] && models[key] !== '';

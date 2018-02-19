@@ -36,3 +36,21 @@ books-filter {
         border-right: 1px solid rgba(0, 0, 0, 0.1);
     }
 }
+
+@media(max-width: 1000px) {
+    books-filter {
+        flex-direction: column;
+
+        & > button,
+        & > input,
+        & > select {
+            border-right: 1px solid rgba(0, 0, 0, 0.1);
+            border-bottom: 0px;
+            width: 100%;
+        }
+
+        button:last-of-type {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+    }
+}
