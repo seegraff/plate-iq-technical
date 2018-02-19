@@ -1,6 +1,6 @@
 <page-header data="$ctrl.categories"></page-header>
 <page-content>
-    <books-filter data="$ctrl.categories"></books-filter>
+    <books-filter data="$ctrl.categories" params="$ctrl.params"></books-filter>
     <books-list data="$ctrl.books" categories="$ctrl.categories"></books-list>
     <books-pagination data="$ctrl.books" ></books-pagination>
 </page-content>

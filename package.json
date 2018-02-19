@@ -3,13 +3,7 @@
     "version": "1.0.0",
     "description": "- Python 3\r - Django 2\r - Angular 2\r - PostgreSQL @ localhost:5432",
     "main": "index.js",
-    "dependencies": {
-        "moment": "^2.20.1",
-        "ng-dialog": "^1.4.0",
-        "restangular": "^1.6.1",
-        "underscore": "^1.8.3",
-        "uuid-js": "^0.7.5"
-    },
+    "dependencies": {},
     "devDependencies": {
         "fs": "0.0.1-security",
         "glob": "^7.1.2",
@@ -34,7 +28,12 @@
         "gulp": "^3.9.1",
         "gulp-count": "^1.0.0",
         "jquery": "^3.3.1",
-        "popper.js": "^1.12.9"
+        "popper.js": "^1.12.9",
+        "moment": "^2.20.1",
+        "ng-dialog": "^1.4.0",
+        "restangular": "^1.6.1",
+        "underscore": "^1.8.3",
+        "uuid-js": "^0.7.5"
     },
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"

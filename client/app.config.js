@@ -7,42 +7,34 @@ angular.module( 'app' )
                 component: 'corePage',
                 params: {
                     limit: {
-                        type: 'string',
                         value: null,
                         squash: true,
                     },
                     offset: {
-                        type: 'string',
                         value: null,
                         squash: true
                     },
                     name: {
-                        type: 'string',
                         value: null,
                         squash: true
                     },
                     author: {
-                        type: 'string',
                         value: null,
                         squash: true
                     },
                     category: {
-                        type: 'string',
                         value: null,
                         squash: true
                     },
                     from: {
-                        type: 'string',
                         value: null,
                         squash: true
                     },
                     to: {
-                        type: 'string',
                         value: null,
                         squash: true
                     },
                     availability: {
-                        type: 'string',
                         value: null,
                         squash: true
                     }

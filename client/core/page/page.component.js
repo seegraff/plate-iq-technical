@@ -1,6 +1,14 @@
-function CorePageController() {}
+function CorePageController(
+    $stateParams
+) {
+    var self = this;
 
-CorePageController.$inject = [];
+    self.params = $stateParams;
+}
+
+CorePageController.$inject = [
+    '$stateParams'
+];
 
 angular.module( 'core' )
     .component( 'corePage', {
